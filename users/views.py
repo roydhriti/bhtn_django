@@ -104,7 +104,7 @@ class ForgotPasswordView(APIView):
 
         token = jwt.encode(payload, 'reset-secret', algorithm='HS256')
 
-        reset_url = f"http://localhost:8000/reset-password?token={token}"
+        reset_url = f"http://localhost:3000/reset-password?token={token}"
 
         html_content = render_to_string("reset_password.html", {
             'user': user,
